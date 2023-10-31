@@ -32,6 +32,11 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
+
+    // Recieving Data From the Route
+    Map<dynamic, dynamic>? info = ModalRoute.of(context)!.settings.arguments as Map<dynamic, dynamic>?;
+
+
     return Scaffold(
         appBar: AppBar(
           title: Text("Home Activity"),
@@ -41,7 +46,7 @@ class _HomeState extends State<Home> {
           children: <Widget>[
             FloatingActionButton(
               onPressed: () {}),
-            Text("Nothing")
+            Text(info?["temp_value"])
           ],
         )
 
