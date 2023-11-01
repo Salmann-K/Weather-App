@@ -36,20 +36,36 @@ class _HomeState extends State<Home> {
     // Recieving Data From the Route
     Map<dynamic, dynamic>? info = ModalRoute.of(context)!.settings.arguments as Map<dynamic, dynamic>?;
 
-
     return Scaffold(
-        appBar: AppBar(
-          title: Text("Home Activity"),
-        ),
-        body:
-        Column(
-          children: <Widget>[
-            FloatingActionButton(
-              onPressed: () {}),
-            Text(info?["temp_value"])
-          ],
+      body: SafeArea(
+        child: Container(
+          child: Column(
+            children: <Widget>[
+              Container( // Search Container
+                padding: EdgeInsets.all(8),
+                margin: EdgeInsets.symmetric(horizontal: 24,vertical: 20),
+                decoration: BoxDecoration(
+                  color: Colors.grey,
+                  borderRadius: BorderRadius.circular(40)
+                ),
+                child: Row(
+                  children: [
+                    Icon(Icons.search),
+                    Expanded(
+                      child: TextField(
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        hintText: "Search Any City Name"
+                      ),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ],
+          ),
         )
-
+      ),
     );
   }
 }
