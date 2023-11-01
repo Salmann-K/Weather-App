@@ -47,14 +47,27 @@ class _LoadingState extends State<Loading> {
     return Scaffold(
       body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Image.asset("assets/images/logo.png"),
-            Text("Weatherr"),
-            Text("Made By Salman"),
-
+            Image.asset("assets/images/logo.png",width: 350,height: 200,),
+            SizedBox(height: 40,),
+            SpinKitWave(
+              color: Colors.black,
+              size: 50.0,
+            ),
+            SizedBox(height: 10,),
+            Text("Weatherr App"
+            ,style: TextStyle(
+                  fontSize: 33,
+                  fontWeight: FontWeight.w500,color: Colors.white),),
+            SizedBox(height: 10,),
+            Text("Made By Salman",
+            style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500,color: Colors.white)
+            )
           ],
         ),
-      )
+      ),
+      backgroundColor: Colors.blue[300],
     );
   }
 }

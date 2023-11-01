@@ -6,6 +6,7 @@ import 'package:weatherr/Activity/location.dart';
 
 void main() {
   runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
     routes: {
       "/" : (context) =>Loading(),
       "/home" : (context) => Home(),
