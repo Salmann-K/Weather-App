@@ -15,6 +15,7 @@ class _LoadingState extends State<Loading> {
   String air_speed="";
   String des="";
   String main="";
+  String icon="";
   void startApp() async{
     //Loading the data
     worker instance= worker(location: "Uttarakhand");
@@ -24,6 +25,7 @@ class _LoadingState extends State<Loading> {
     air_speed=instance.air_speed;
     des=instance.description;
     main=instance.main;
+    icon=instance.icon;
 
     //Sending Data using Home Route with no back functionality
     Navigator.pushReplacementNamed(context, '/home' , arguments: {
@@ -31,7 +33,8 @@ class _LoadingState extends State<Loading> {
       "Hum_value" : hum,
       "air_speed_value" : air_speed,
       "des" : des,
-      "main" : main
+      "main" : main,
+      "icon_value" : icon
     });
   }
   @override

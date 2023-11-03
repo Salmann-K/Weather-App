@@ -15,6 +15,7 @@ String humidity='';
 String air_speed='';
 String description='';
 String main='';
+String icon='';
 
 //method =
 Future<void> getData() async
@@ -39,6 +40,7 @@ Future<void> getData() async
     Map weather_main_data = weather_data[0];
     String getMain_des = weather_main_data['main'];
     String getDesc = weather_main_data["description"];
+    String geticon=weather_main_data["icon"].toString();
 
 
     //Assigning Values
@@ -47,6 +49,7 @@ Future<void> getData() async
     air_speed = getAir_speed.toString(); // Km/Hr
     description = getDesc;
     main = getMain_des;
+    icon=geticon;
 
   }catch(e){
     temp = "Can't Find Data";
@@ -54,6 +57,7 @@ Future<void> getData() async
     air_speed = "Can't Find Data";
     description = "Can't Find Data";
     main = "Can't Find Data";
+    icon="03n";
   }
 
 }
